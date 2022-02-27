@@ -1,4 +1,4 @@
-import { NotImplementedError } from '../extensions/index.js';
+const { NotImplementedError } = require('../extensions/index.js');
 
 /**
  * Create transformed array based on the control sequences that original
@@ -13,7 +13,7 @@ import { NotImplementedError } from '../extensions/index.js';
  * transform([1, 2, 3, '--discard-prev', 4, 5]) => [1, 2, 4, 5]
  * 
  */
-export default function transform(arr) {
+function transform(arr) {
   if (!Array.isArray(arr)) {
     throw new Error("'arr' parameter must be an instance of the Array!")
   }
@@ -55,3 +55,7 @@ export default function transform(arr) {
   }
   return result;
 }
+
+module.exports = {
+  transform
+};
